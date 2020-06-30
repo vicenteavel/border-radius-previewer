@@ -20,13 +20,13 @@ function App() {
     boxElemment.style.borderBottomRightRadius = bottomRight + "px";
 
     textareaElementResult.value = "";
-    if(topLeft !== 0)
+    if(topLeft)
       textareaElementResult.value += `border-top-left-radius: ${topLeft}px\n`;
-    if(topRight !== 0)
+    if(topRight)
       textareaElementResult.value += `border-top-right-radius: ${topRight}px\n`;
-    if(bottomRight !== 0)
+    if(bottomRight)
       textareaElementResult.value += `border-bottom-left-radius: ${bottomRight}px\n`;
-    if(bottomLeft !== 0)
+    if(bottomLeft)
       textareaElementResult.value += `border-bottom-right-radius: ${bottomLeft}px\n`;
 
   }, [topLeft, topRight, bottomLeft, bottomRight]);
@@ -79,7 +79,7 @@ function App() {
         
       </div>
 
-      <button onClick={ copyToClipboard }>Copy to clipboard</button>
+      <button onClick={ () => copyToClipboard('resultToCopy') }>Copy to clipboard</button>
 
     </div>
   );
